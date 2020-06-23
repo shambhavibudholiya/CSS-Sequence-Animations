@@ -1,0 +1,69 @@
+body {
+  background: #272727;
+  margin: 0;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+}
+.container .left {
+  margin-right: 3em;
+}
+.container p {
+  margin: 0;
+}
+.container .right {
+  overflow: hidden;
+}
+.container p, .container label {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.container ul {
+  list-style-type: none;
+  margin: 1.5em 0;
+  padding: 0;
+}
+.container li {
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  color: #A0A0A0;
+}
+
+ul.featured li {
+  opacity: 0;
+  transform: translateX(100%);
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.75, -0.015, 0.565, 1.055);
+  transition-property: opacity, transform;
+  transition-delay: calc(0.025s *(var(--length) - (var(--index) + 1)));
+}
+
+label {
+  cursor: pointer;
+  color: gray;
+}
+label:hover {
+  color: white;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  left: -5000px;
+}
+input[type=checkbox]:checked + label {
+  color: white;
+}
+input[type=checkbox]:checked ~ ul li {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: calc(0.055s * var(--index));
+}
+
+/*# sourceMappingURL=main.css.map */
